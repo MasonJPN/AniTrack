@@ -1,3 +1,6 @@
+import AnimeButtons from "../../components/AnimeButtons"
+
+
 async function getAnime(id: string) {
   const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`)
   const data = await res.json()
@@ -7,6 +10,10 @@ async function getAnime(id: string) {
 export default async function AnimePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const anime = await getAnime(id)
+
+
+
+
 
   return (
     <div className="p-8 max-w-5xl mx-auto">
@@ -20,12 +27,7 @@ export default async function AnimePage({ params }: { params: Promise<{ id: stri
           <h1 className="text-4xl font-bold">{anime.title}</h1>
           <h2 className="text-gray-400">Rank #{anime.rank}</h2>
           <div className="flex gap-4 mt-4">
-            <button className="bg-[#00e5ff] text-black font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">
-              Watch Later
-            </button>
-            <button className="bg-[#1e2d45] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#2a3d55] transition-colors">
-              Watched
-            </button>
+            <AnimeButtons anime={anime}/>
           </div>
         </div>
       </div>
