@@ -22,27 +22,6 @@ async function getTrendingAnime(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div> 
 
