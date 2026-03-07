@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080c14] flex`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080c14] flex overflow-x-hidden`}>
         <Sidebar />
         <main className="ml-56 flex-1">
           <WatchedProvider>

@@ -1,6 +1,6 @@
 'use client'
 import React, { ComponentType } from 'react'
-import { HomeIcon, Bars3Icon, StarIcon, ClockIcon, XCircleIcon } from '@heroicons/react/16/solid'
+import { HomeIcon, Bars3Icon, StarIcon, ClockIcon, XCircleIcon, FilmIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -28,7 +28,7 @@ const Sidebar = () => {
         <div className="flex gap-2 items-center px-2">
           <Image src="/cloud.png" alt="cloud logo" width={28} height={28} />
           {isOpen && (
-            <h2 className="text-3xl font-bold text-white" style={{ fontFamily: 'Trebuchet MS, sans-serif' }}>
+            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Trebuchet MS, sans-serif' }}>
               AniTrack
             </h2>
           )}
@@ -58,7 +58,7 @@ const Sidebar = () => {
             </Link>
 
             <Link href="/mylist">
-              <SidebarLink text="Watched List" Icon={Bars3Icon} isOpen={isOpen} />
+              <SidebarLink text="Watched List" Icon={FilmIcon} isOpen={isOpen} />
             </Link>
 
             <Link href="/toprated">
