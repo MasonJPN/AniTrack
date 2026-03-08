@@ -3,30 +3,32 @@ import React from 'react'
 import AnimeCard from '../components/AnimeCard'
 import WatchedAnime from '../components/WatchedAnime'
 
+export const dynamic = 'force-dynamic'
+
+
 async function getTrendingAnime(){
   const res = await fetch ('https://api.jikan.moe/v4/seasons/now')
   const data =  await res.json()
-  return data.data
+  return data.data ?? []
 }
 
 async function getActionAnime(){
   const res = await fetch ('https://api.jikan.moe/v4/anime?genres=1&limit=20')
   const data = await res.json()
-  console.log(data)
-  return data.data
+  return data.data ?? []
 }
 
 
 async function getMysteryAnime(){
   const res = await fetch ('https://api.jikan.moe/v4/anime?genres=7&limit=20')
   const data = await res.json()
-  return data.data
+  return data.data ?? []
 }
 
 async function getFantasyAnime(){
   const res = await fetch ('https://api.jikan.moe/v4/anime?genres=10&limit=20')
   const data = await res.json()
-  return data.data
+  return data.data ?? []
 }
 
 
